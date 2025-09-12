@@ -1,0 +1,196 @@
+{
+  "timestamp": "2025-09-12T12:22:57.304997",
+  "model_performance": {
+    "global": {
+      "model_name": "global",
+      "mse": 723487802513765.1,
+      "mae": 8069966.587315492,
+      "r2": 0.9993100508752693,
+      "rmse": 26897728.575360507,
+      "mape": 0.060511683486983145,
+      "residual_std": 26897124.125259086,
+      "prediction_time": 0.045845985412597656,
+      "predictions_per_second": 218121.60672310862,
+      "sample_count": 10000
+    },
+    "regional": {
+      "region_11110530": {
+        "model_name": "region_11110530",
+        "mse": 107284054962701.12,
+        "mae": 6626052.248529807,
+        "r2": 0.9999161422322832,
+        "rmse": 10357801.64719817,
+        "mape": 0.0322814484119398,
+        "residual_std": 9153715.285802314,
+        "prediction_time": 0.012369871139526367,
+        "predictions_per_second": 1940.1980610219148,
+        "sample_count": 24
+      },
+      "region_11110560": {
+        "model_name": "region_11110560",
+        "mse": 35672731060968.6,
+        "mae": 4027510.008260338,
+        "r2": 0.997375185150705,
+        "rmse": 5972665.323033646,
+        "mape": 0.0450699801194119,
+        "residual_std": 5968692.542022396,
+        "prediction_time": 0.01382136344909668,
+        "predictions_per_second": 1374.68347967087,
+        "sample_count": 19
+      },
+      "region_11110550": {
+        "model_name": "region_11110550",
+        "mse": 49624678310621.555,
+        "mae": 3550130.768132843,
+        "r2": 0.9993279827210374,
+        "rmse": 7044478.569107976,
+        "mape": 0.029014864704975253,
+        "residual_std": 6870992.5236346135,
+        "prediction_time": 0.01648402214050293,
+        "predictions_per_second": 667.3128624943954,
+        "sample_count": 11
+      },
+      "region_11110540": {
+        "model_name": "region_11110540",
+        "mse": 490966957646674.75,
+        "mae": 12086672.582236312,
+        "r2": 0.9996861064045749,
+        "rmse": 22157774.203350723,
+        "mape": 0.02961878741038747,
+        "residual_std": 21550356.342582032,
+        "prediction_time": 0.013347148895263672,
+        "predictions_per_second": 824.1460469436605,
+        "sample_count": 11
+      },
+      "region_11110515": {
+        "model_name": "region_11110515",
+        "mse": 260749518729491.34,
+        "mae": 9468788.085360872,
+        "r2": 0.9967494525770476,
+        "rmse": 16147740.359861232,
+        "mape": 0.03495687596338463,
+        "residual_std": 16127493.660507819,
+        "prediction_time": 0.012223958969116211,
+        "predictions_per_second": 1636.1311462620195,
+        "sample_count": 20
+      }
+    },
+    "local": {}
+  },
+  "comparative_analysis": {
+    "model_tier_comparison": {
+      "global": {
+        "model_count": 1,
+        "avg_r2": 0.9993100508752693,
+        "std_r2": 0.0,
+        "avg_mae": 8069966.587315492,
+        "avg_speed": 218121.60672310862,
+        "best_r2": 0.9993100508752693,
+        "worst_r2": 0.9993100508752693
+      },
+      "regional": {
+        "model_count": 5,
+        "avg_r2": 0.9986109738171296,
+        "std_r2": 0.0012935154731292784,
+        "avg_mae": 7151830.7385040345,
+        "avg_speed": 1288.494319278572,
+        "best_r2": 0.9999161422322832,
+        "worst_r2": 0.9967494525770476
+      }
+    },
+    "performance_distribution": {},
+    "speed_analysis": {},
+    "best_worst_models": {
+      "best_3": [
+        {
+          "model_name": "region_11110530",
+          "mse": 107284054962701.12,
+          "mae": 6626052.248529807,
+          "r2": 0.9999161422322832,
+          "rmse": 10357801.64719817,
+          "mape": 0.0322814484119398,
+          "residual_std": 9153715.285802314,
+          "prediction_time": 0.012369871139526367,
+          "predictions_per_second": 1940.1980610219148,
+          "sample_count": 24,
+          "tier": "regional"
+        },
+        {
+          "model_name": "region_11110540",
+          "mse": 490966957646674.75,
+          "mae": 12086672.582236312,
+          "r2": 0.9996861064045749,
+          "rmse": 22157774.203350723,
+          "mape": 0.02961878741038747,
+          "residual_std": 21550356.342582032,
+          "prediction_time": 0.013347148895263672,
+          "predictions_per_second": 824.1460469436605,
+          "sample_count": 11,
+          "tier": "regional"
+        },
+        {
+          "model_name": "region_11110550",
+          "mse": 49624678310621.555,
+          "mae": 3550130.768132843,
+          "r2": 0.9993279827210374,
+          "rmse": 7044478.569107976,
+          "mape": 0.029014864704975253,
+          "residual_std": 6870992.5236346135,
+          "prediction_time": 0.01648402214050293,
+          "predictions_per_second": 667.3128624943954,
+          "sample_count": 11,
+          "tier": "regional"
+        }
+      ],
+      "worst_3": [
+        {
+          "model_name": "global",
+          "mse": 723487802513765.1,
+          "mae": 8069966.587315492,
+          "r2": 0.9993100508752693,
+          "rmse": 26897728.575360507,
+          "mape": 0.060511683486983145,
+          "residual_std": 26897124.125259086,
+          "prediction_time": 0.045845985412597656,
+          "predictions_per_second": 218121.60672310862,
+          "sample_count": 10000,
+          "tier": "global"
+        },
+        {
+          "model_name": "region_11110560",
+          "mse": 35672731060968.6,
+          "mae": 4027510.008260338,
+          "r2": 0.997375185150705,
+          "rmse": 5972665.323033646,
+          "mape": 0.0450699801194119,
+          "residual_std": 5968692.542022396,
+          "prediction_time": 0.01382136344909668,
+          "predictions_per_second": 1374.68347967087,
+          "sample_count": 19,
+          "tier": "regional"
+        },
+        {
+          "model_name": "region_11110515",
+          "mse": 260749518729491.34,
+          "mae": 9468788.085360872,
+          "r2": 0.9967494525770476,
+          "rmse": 16147740.359861232,
+          "mape": 0.03495687596338463,
+          "residual_std": 16127493.660507819,
+          "prediction_time": 0.012223958969116211,
+          "predictions_per_second": 1636.1311462620195,
+          "sample_count": 20,
+          "tier": "regional"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "⚠️  글로벌 모델이 지역 모델과 비슷하거나 더 나은 성능을 보입니다. 지역별 특성 반영을 개선해야 합니다."
+  ],
+  "summary": {
+    "total_models": 6,
+    "successful_evaluations": 6,
+    "success_rate": 100.0
+  }
+}

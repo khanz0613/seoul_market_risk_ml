@@ -1,26 +1,46 @@
-# Seoul Market Risk ML System
+# Seoul Market Opportunity ML System
 
-A hierarchical ML system for predicting small business revenue risk in Seoul using commercial area data (2019-2024).
+A proactive financial services platform for small businesses in Seoul using revenue trend monitoring and opportunity scoring (2019-2024).
 
 ## Project Overview
 
-This system uses Seoul's commercial area analysis data to evaluate revenue risk for small businesses using a 5-level scoring system (0-100 points) and provides personalized loan/funding recommendations.
+This system continuously monitors small business revenue trends to provide proactive financial services. Using a 5-tier opportunity scoring system (0-100 points), it recommends:
+
+- **Preemptive loans** when revenue declines to prevent cash flow crises
+- **Investment opportunities** when revenue grows to maximize surplus funds
+- **NH Bank integration** for personalized loan and investment product matching
 
 ## Key Features
 
 - **Hierarchical ML Models**: 79 models (1 Global + 6 Regional + 72 Local)
-- **Risk Score Engine**: 5-level risk assessment based on Altman Z-Score methodology
-- **Loan Calculator**: Risk-neutralization based loan amount calculation
-- **LLM Integration**: Automated report generation and financial recommendations
-- **Real-time Processing**: Fast risk calculation for new data inputs
+- **Opportunity Score Engine**: 5-tier opportunity assessment (매우위험, 위험군, 적정, 좋음, 매우좋음)
+- **Proactive Financial Services**: Automatic loan/investment recommendations based on revenue trends
+- **NH Bank API Integration**: Real-time access to loan and investment products
+- **Revenue Monitoring**: Continuous tracking and early intervention system
+- **LLM Integration**: Automated opportunity reports and financial guidance
 
 ## Architecture
 
 ```
-Global Model (1) → Regional Models (6) → Local Models (72)
-     ↓                    ↓                     ↓
-Seoul-wide patterns → Regional patterns → Business-specific patterns
+Revenue Monitoring System
+         ↓
+ML Prediction Models (79)
+         ↓
+Opportunity Score Calculator (5-tier)
+         ↓
+Financial Recommendation Engine
+    ↓            ↓
+Loan Services   Investment Services
+    ↓            ↓
+NH Bank API Integration
 ```
+
+### 5-Tier Opportunity System
+- **매우위험 (0-20)**: 긴급 대출 필요 → Emergency loan products
+- **위험군 (21-40)**: 안정화 대출 추천 → Stabilization funding  
+- **적정 (41-60)**: 모니터링 지속 → Continuous monitoring
+- **좋음 (61-80)**: 성장 투자 기회 → Growth investment options
+- **매우좋음 (81-100)**: 고수익 투자 추천 → Premium investment products
 
 ## Data Sources
 

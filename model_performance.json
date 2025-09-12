@@ -1,0 +1,428 @@
+{
+  "start_time": "2025-09-12T12:19:52.810488",
+  "models_trained": 27,
+  "models_failed": 0,
+  "performance_summary": {},
+  "errors": [],
+  "end_time": "2025-09-12T12:20:20.681537",
+  "model_performance": {
+    "global": {
+      "model_type": "global",
+      "model_name": "random_forest",
+      "model_path": "models/global_model.joblib",
+      "performance": {
+        "mse": 943571704356240.9,
+        "mae": 8333542.009835786,
+        "r2": 0.9991188804461288,
+        "rmse": 30717612.282796998
+      },
+      "all_models_performance": {
+        "random_forest": {
+          "mse": 943571704356240.9,
+          "mae": 8333542.009835786,
+          "r2": 0.9991188804461288,
+          "rmse": 30717612.282796998
+        },
+        "ridge": {
+          "mse": 4076321764893802.0,
+          "mae": 24216005.493140534,
+          "r2": 0.99619347761454,
+          "rmse": 63846078.69629741
+        },
+        "linear": {
+          "mse": 4076321764337278.5,
+          "mae": 24216005.616925072,
+          "r2": 0.9961934776150597,
+          "rmse": 63846078.691939086
+        }
+      },
+      "training_time": 19.361177921295166,
+      "training_samples": 323310,
+      "test_samples": 80828
+    },
+    "region_11110515": {
+      "model_type": "regional",
+      "region_id": "11110515",
+      "model_path": "models/regional_model_11110515.joblib",
+      "performance": {
+        "mse": 1737359342479753.0,
+        "mae": 16545766.288569992,
+        "r2": 0.9982353789308872,
+        "rmse": 41681642.7516929
+      },
+      "training_time": 0.10513186454772949,
+      "training_samples": 648,
+      "test_samples": 163
+    },
+    "region_11110530": {
+      "model_type": "regional",
+      "region_id": "11110530",
+      "model_path": "models/regional_model_11110530.joblib",
+      "performance": {
+        "mse": 2693508264869196.0,
+        "mae": 22163481.424849615,
+        "r2": 0.9982820658533459,
+        "rmse": 51899019.883512214
+      },
+      "training_time": 0.07757210731506348,
+      "training_samples": 815,
+      "test_samples": 204
+    },
+    "region_11110540": {
+      "model_type": "regional",
+      "region_id": "11110540",
+      "model_path": "models/regional_model_11110540.joblib",
+      "performance": {
+        "mse": 1630700547334513.2,
+        "mae": 21239803.26782035,
+        "r2": 0.9988492015778629,
+        "rmse": 40381933.4273944
+      },
+      "training_time": 0.05480217933654785,
+      "training_samples": 379,
+      "test_samples": 95
+    },
+    "region_11110550": {
+      "model_type": "regional",
+      "region_id": "11110550",
+      "model_path": "models/regional_model_11110550.joblib",
+      "performance": {
+        "mse": 422485125755626.1,
+        "mae": 10092725.451008044,
+        "r2": 0.9953307102364003,
+        "rmse": 20554442.968750726
+      },
+      "training_time": 0.06781911849975586,
+      "training_samples": 412,
+      "test_samples": 104
+    },
+    "region_11110560": {
+      "model_type": "regional",
+      "region_id": "11110560",
+      "model_path": "models/regional_model_11110560.joblib",
+      "performance": {
+        "mse": 555168245634263.25,
+        "mae": 10417682.110020857,
+        "r2": 0.9981076738092896,
+        "rmse": 23562008.522922304
+      },
+      "training_time": 0.06182503700256348,
+      "training_samples": 540,
+      "test_samples": 135
+    },
+    "region_11110570": {
+      "model_type": "regional",
+      "region_id": "11110570",
+      "model_path": "models/regional_model_11110570.joblib",
+      "performance": {
+        "mse": 620388208417513.9,
+        "mae": 13812885.381760024,
+        "r2": 0.9988663433977282,
+        "rmse": 24907593.38871409
+      },
+      "training_time": 0.03263688087463379,
+      "training_samples": 242,
+      "test_samples": 61
+    },
+    "local_11110515_4": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "4",
+      "model_path": "models/local_model_11110515_4.joblib",
+      "performance": {
+        "mse": 2.8990143619012086e-13,
+        "mae": 3.814697265625e-07,
+        "r2": 1.0,
+        "rmse": 5.384249587362391e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_2": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "2",
+      "model_path": "models/local_model_11110515_2.joblib",
+      "performance": {
+        "mse": 1.2434497875801753e-13,
+        "mae": 3.218650817871094e-07,
+        "r2": 1.0,
+        "rmse": 3.5262583393452264e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_0": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "0",
+      "model_path": "models/local_model_11110515_0.joblib",
+      "performance": {
+        "mse": 3389125168981744.0,
+        "mae": 53893290.039871976,
+        "r2": 0.9873733408878773,
+        "rmse": 58216193.35701832
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_3": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "3",
+      "model_path": "models/local_model_11110515_3.joblib",
+      "performance": {
+        "mse": 1635394165022698.2,
+        "mae": 33385293.059906006,
+        "r2": 0.9943669711056452,
+        "rmse": 40440006.985937804
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_9": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "9",
+      "model_path": "models/local_model_11110515_9.joblib",
+      "performance": {
+        "mse": 3.886271344588107e+16,
+        "mae": 128105825.56796284,
+        "r2": 0.9619652619028288,
+        "rmse": 197136281.40421304
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_8": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "8",
+      "model_path": "models/local_model_11110515_8.joblib",
+      "performance": {
+        "mse": 6.558559251246266e-13,
+        "mae": 7.070600986480713e-07,
+        "r2": 1.0,
+        "rmse": 8.098493224820445e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_7": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "7",
+      "model_path": "models/local_model_11110515_7.joblib",
+      "performance": {
+        "mse": 5.204725539442734e-14,
+        "mae": 1.8477439880371094e-07,
+        "r2": 1.0,
+        "rmse": 2.2813867579704092e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_10": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "10",
+      "model_path": "models/local_model_11110515_10.joblib",
+      "performance": {
+        "mse": 5.826450433232821e-14,
+        "mae": 1.9073486328125e-07,
+        "r2": 1.0,
+        "rmse": 2.4138041414399843e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_25": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "25",
+      "model_path": "models/local_model_11110515_25.joblib",
+      "performance": {
+        "mse": 6.768370586218708e-15,
+        "mae": 7.469207048416138e-08,
+        "r2": 1.0,
+        "rmse": 8.227010748880002e-08
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_12": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "12",
+      "model_path": "models/local_model_11110515_12.joblib",
+      "performance": {
+        "mse": 5.245803791353864e-16,
+        "mae": 1.7136335372924803e-08,
+        "r2": 1.0,
+        "rmse": 2.2903719766347703e-08
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_23": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "23",
+      "model_path": "models/local_model_11110515_23.joblib",
+      "performance": {
+        "mse": 4.545697152025241e-13,
+        "mae": 5.304813385009766e-07,
+        "r2": 1.0,
+        "rmse": 6.742178544079978e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_14": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "14",
+      "model_path": "models/local_model_11110515_14.joblib",
+      "performance": {
+        "mse": 7.389644451905042e-14,
+        "mae": 2.384185791015625e-07,
+        "r2": 1.0,
+        "rmse": 2.718390047786565e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_32": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "32",
+      "model_path": "models/local_model_11110515_32.joblib",
+      "performance": {
+        "mse": 5.684341886080802e-14,
+        "mae": 1.430511474609375e-07,
+        "r2": 1.0,
+        "rmse": 2.384185791015625e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_26": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "26",
+      "model_path": "models/local_model_11110515_26.joblib",
+      "performance": {
+        "mse": 1.3360867967548983e-12,
+        "mae": 9.953975677490234e-07,
+        "r2": 1.0,
+        "rmse": 1.155892208103722e-06
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_33": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "33",
+      "model_path": "models/local_model_11110515_33.joblib",
+      "performance": {
+        "mse": 6.167510946397669e-13,
+        "mae": 5.960464477539062e-07,
+        "r2": 1.0,
+        "rmse": 7.85335020637541e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_37": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "37",
+      "model_path": "models/local_model_11110515_37.joblib",
+      "performance": {
+        "mse": 7.993605777301127e-16,
+        "mae": 2.384185791015625e-08,
+        "r2": 1.0,
+        "rmse": 2.827296549232345e-08
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_41": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "41",
+      "model_path": "models/local_model_11110515_41.joblib",
+      "performance": {
+        "mse": 9.237055564881303e-15,
+        "mae": 8.344650268554687e-08,
+        "r2": 1.0,
+        "rmse": 9.610960183499515e-08
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_38": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "38",
+      "model_path": "models/local_model_11110515_38.joblib",
+      "performance": {
+        "mse": 5.382361223382759e-14,
+        "mae": 1.9669532775878905e-07,
+        "r2": 1.0,
+        "rmse": 2.3199916429553705e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_46": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "46",
+      "model_path": "models/local_model_11110515_46.joblib",
+      "performance": {
+        "mse": 4.263256414560601e-14,
+        "mae": 1.6689300537109374e-07,
+        "r2": 1.0,
+        "rmse": 2.0647654623614278e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    },
+    "local_11110515_39": {
+      "model_type": "local",
+      "region_id": "11110515",
+      "business_id": "39",
+      "model_path": "models/local_model_11110515_39.joblib",
+      "performance": {
+        "mse": 3.83160170258634e-13,
+        "mae": 5.185604095458984e-07,
+        "r2": 1.0,
+        "rmse": 6.189993297723626e-07
+      },
+      "training_samples": 19,
+      "test_samples": 5,
+      "total_samples": "24"
+    }
+  }
+}

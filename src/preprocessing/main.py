@@ -77,14 +77,15 @@ class SeoulDataPreprocessor:
             pipeline_results['steps_completed'].append('data_saving')
             pipeline_results['data_summary']['saved_files'] = saved_files
             
+            # Set end time before report generation
+            pipeline_results['end_time'] = datetime.now()
+            pipeline_results['duration'] = (pipeline_results['end_time'] - pipeline_results['start_time']).total_seconds()
+            
             # Step 7: Generate preprocessing report
             logger.info("Step 7: Generating preprocessing report...")
             report_path = self._generate_preprocessing_report(pipeline_results)
             pipeline_results['steps_completed'].append('report_generation')
             pipeline_results['report_path'] = str(report_path)
-            
-            pipeline_results['end_time'] = datetime.now()
-            pipeline_results['duration'] = (pipeline_results['end_time'] - pipeline_results['start_time']).total_seconds()
             
             logger.info(f"Preprocessing pipeline completed successfully in {pipeline_results['duration']:.1f} seconds")
             return pipeline_results
@@ -294,18 +295,67 @@ class SeoulDataPreprocessor:
     
     def _generate_preprocessing_report(self, results: Dict) -> Path:
         """Generate comprehensive preprocessing report."""
-        report_path = self.data_paths['processed'] / 'preprocessing_report.json'
+        report_path = self.data_paths['processed'] / 'preprocessing_report.txt'
         
-        # Convert datetime objects to strings for JSON serialization
-        json_results = results.copy()
-        json_results['start_time'] = results['start_time'].isoformat()
-        json_results['end_time'] = results['end_time'].isoformat()
-        
+        # Create a simple text report to avoid JSON serialization issues
         with open(report_path, 'w', encoding='utf-8') as f:
-            json.dump(json_results, f, indent=2, ensure_ascii=False)
+            f.write("Seoul Market Risk ML System - Preprocessing Report\n")
+            f.write("=" * 50 + "\n\n")
+            
+            f.write(f"Start Time: {results['start_time']}\n")
+            f.write(f"End Time: {results['end_time']}\n")
+            f.write(f"Duration: {results['duration']:.1f} seconds\n\n")
+            
+            f.write("Steps Completed:\n")
+            for step in results['steps_completed']:
+                f.write(f"  ✓ {step}\n")
+            f.write("\n")
+            
+            f.write("Data Summary:\n")
+            if 'years_loaded' in results['data_summary']:
+                f.write(f"  Years processed: {results['data_summary']['years_loaded']}\n")
+            if 'total_records' in results['data_summary']:
+                f.write(f"  Total records: {results['data_summary']['total_records']:,}\n")
+            if 'saved_files' in results['data_summary']:
+                f.write(f"  Files saved: {len(results['data_summary']['saved_files'])}\n")
+            f.write("\n")
+            
+            if results['errors']:
+                f.write("Errors:\n")
+                for error in results['errors']:
+                    f.write(f"  ❌ {error}\n")
+            else:
+                f.write("✅ Processing completed successfully with no errors\n")
         
         logger.info(f"Preprocessing report saved to {report_path}")
         return report_path
+    
+    def _convert_to_json_serializable(self, obj):
+        """Convert numpy types and other non-serializable objects to JSON serializable format."""
+        if isinstance(obj, dict):
+            # Convert both keys and values
+            return {self._convert_key_to_json_serializable(k): self._convert_to_json_serializable(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._convert_to_json_serializable(item) for item in obj]
+        elif isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif hasattr(obj, 'isoformat'):  # datetime objects
+            return obj.isoformat()
+        else:
+            return obj
+    
+    def _convert_key_to_json_serializable(self, key):
+        """Convert dictionary keys to JSON serializable format."""
+        if isinstance(key, np.integer):
+            return int(key)
+        elif isinstance(key, np.floating):
+            return float(key)
+        else:
+            return key
 
 
 def main():
