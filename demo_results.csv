@@ -1,4 +1,0 @@
-business_id,business_name,business_type,risk_score,risk_level,recommended_loan,revenue_change,volatility,trend
-DEMO_001,홍대맛집,음식점,30.0,주의,10982000,9.2,7.0,289999
-DEMO_002,편의점24,소매업,49.5,경계,11505725,-13.3,4.9,-470000
-DEMO_003,헤어살롱,서비스업,18.0,안전,6977880,13.8,4.7,280000
