@@ -1,0 +1,86 @@
+{
+  "best_parameters": {
+    "lightgbm": {
+      "n_estimators": 252,
+      "max_depth": 7,
+      "learning_rate": 0.2156305415423741,
+      "num_leaves": 49,
+      "subsample": 0.9206144261066345,
+      "colsample_bytree": 0.7376198026873148,
+      "reg_alpha": 0.008892804071877366,
+      "reg_lambda": 0.3502012092876032
+    },
+    "random_forest": {
+      "n_estimators": 138,
+      "max_depth": 12,
+      "min_samples_split": 5,
+      "min_samples_leaf": 1,
+      "max_features": null,
+      "bootstrap": true
+    },
+    "neural_network": {
+      "n_layers": 2,
+      "layer_0_size": 66,
+      "layer_1_size": 48,
+      "activation": "relu",
+      "solver": "adam",
+      "alpha": 0.0006005486245046418,
+      "learning_rate": "adaptive"
+    }
+  },
+  "optimization_results": {
+    "lightgbm": {
+      "best_score": 0.9967984290413033,
+      "best_params": {
+        "n_estimators": 252,
+        "max_depth": 7,
+        "learning_rate": 0.2156305415423741,
+        "num_leaves": 49,
+        "subsample": 0.9206144261066345,
+        "colsample_bytree": 0.7376198026873148,
+        "reg_alpha": 0.008892804071877366,
+        "reg_lambda": 0.3502012092876032
+      },
+      "n_trials": 30
+    },
+    "random_forest": {
+      "best_score": 0.9938876924297165,
+      "best_params": {
+        "n_estimators": 138,
+        "max_depth": 12,
+        "min_samples_split": 5,
+        "min_samples_leaf": 1,
+        "max_features": null,
+        "bootstrap": true
+      },
+      "n_trials": 20
+    },
+    "neural_network": {
+      "best_score": 0.9948527765479401,
+      "best_params": {
+        "n_layers": 2,
+        "layer_0_size": 66,
+        "layer_1_size": 48,
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0006005486245046418,
+        "learning_rate": "adaptive"
+      },
+      "n_trials": 15
+    }
+  },
+  "final_model_results": {
+    "lightgbm": {
+      "test_f1_score": 0.997873604596048,
+      "training_time": 5.4950947761535645
+    },
+    "random_forest": {
+      "test_f1_score": 0.9950599436985649,
+      "training_time": 50.938714027404785
+    },
+    "neural_network": {
+      "test_f1_score": 0.9947845461565734,
+      "training_time": 8.66688323020935
+    }
+  }
+}

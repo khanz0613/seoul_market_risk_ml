@@ -1,0 +1,127 @@
+{
+  "model_performance": {
+    "random_forest": {
+      "training_time": 7.034358024597168,
+      "validation_accuracy": 0.9957417621674145,
+      "validation_f1": 0.9957371875637192,
+      "prediction_time_per_sample": 1.4097213745117188e-05
+    },
+    "xgboost": {
+      "training_time": 3.5990149974823,
+      "validation_accuracy": 0.9992283730102026,
+      "validation_f1": 0.9992283831401693,
+      "prediction_time_per_sample": 3.5982131958007814e-06
+    },
+    "lightgbm": {
+      "training_time": 5.048456907272339,
+      "validation_accuracy": 0.9990854791232031,
+      "validation_f1": 0.9990854276884382,
+      "prediction_time_per_sample": 6.45303726196289e-06
+    },
+    "neural_network": {
+      "training_time": 22.21354603767395,
+      "validation_accuracy": 0.9982566945786059,
+      "validation_f1": 0.99825650096874,
+      "prediction_time_per_sample": 8.492469787597656e-07
+    },
+    "svm": {
+      "training_time": 471.5571012496948,
+      "validation_accuracy": 0.7063530622159984,
+      "validation_f1": 0.6864661617826703,
+      "prediction_time_per_sample": 0.001403496026992798
+    }
+  },
+  "evaluation_results": {
+    "random_forest": {
+      "test_accuracy": 0.9954501806209703,
+      "test_f1_weighted": 0.9954470475589277,
+      "test_f1_macro": 0.995447063077294,
+      "test_auc_roc": 0.9999619276709248,
+      "prediction_time_full_test": 0.07370996475219727,
+      "samples_per_second": 593379.7437977501
+    },
+    "xgboost": {
+      "test_accuracy": 0.9989254195436462,
+      "test_f1_weighted": 0.9989254414632222,
+      "test_f1_macro": 0.9989254540274878,
+      "test_auc_roc": 0.9999984017313376,
+      "prediction_time_full_test": 0.07985210418701172,
+      "samples_per_second": 547737.601222964
+    },
+    "lightgbm": {
+      "test_accuracy": 0.9989025561296813,
+      "test_f1_weighted": 0.9989025162512499,
+      "test_f1_macro": 0.9989025246453924,
+      "test_auc_roc": 0.9999982220540878,
+      "prediction_time_full_test": 0.22386622428894043,
+      "samples_per_second": 195375.60942443952
+    },
+    "neural_network": {
+      "test_accuracy": 0.997507887877818,
+      "test_f1_weighted": 0.9975077927976072,
+      "test_f1_macro": 0.997507814139652,
+      "test_auc_roc": 0.9999811109251858,
+      "prediction_time_full_test": 0.020313024520874023,
+      "samples_per_second": 2153199.783471637
+    },
+    "svm": {
+      "test_accuracy": 0.7061594037221638,
+      "test_f1_weighted": 0.6864328438959457,
+      "test_f1_macro": 0.6864351845507463,
+      "test_auc_roc": 0.9607299200494074,
+      "prediction_time_full_test": 60.07538604736328,
+      "samples_per_second": 728.0519173945395
+    }
+  },
+  "feature_names": [
+    "당월_매출_금액",
+    "당월_매출_건수",
+    "주중_매출_금액",
+    "주말_매출_금액",
+    "시간대_11~14_매출_금액",
+    "시간대_17~21_매출_금액",
+    "시간대_21~24_매출_금액",
+    "남성_매출_금액",
+    "여성_매출_금액",
+    "연령대_20_매출_금액",
+    "연령대_30_매출_금액",
+    "연령대_40_매출_금액",
+    "데이터연도",
+    "avg_transaction",
+    "revenue_log",
+    "weekend_ratio",
+    "weekday_strength",
+    "peak_performance",
+    "peak_ratio",
+    "female_ratio",
+    "middle_age_focus",
+    "covid_period",
+    "post_covid",
+    "biz_type_0",
+    "biz_type_1",
+    "biz_type_2",
+    "biz_type_3",
+    "biz_type_4",
+    "biz_type_5",
+    "biz_type_6",
+    "biz_type_7",
+    "biz_type_8",
+    "biz_type_9",
+    "region_0",
+    "region_1",
+    "region_2",
+    "region_3",
+    "region_4",
+    "region_5",
+    "region_6",
+    "region_7",
+    "region_8",
+    "region_9",
+    "region_10",
+    "region_11",
+    "region_12",
+    "region_13",
+    "region_14"
+  ],
+  "class_weights": {
+    

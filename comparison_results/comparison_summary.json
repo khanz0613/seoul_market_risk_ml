@@ -1,0 +1,19 @@
+{
+  "statistical_model": {
+    "accuracy": 0.2,
+    "confidence": 0.85,
+    "avg_prediction_time": 2.9087066650390623e-06,
+    "method": "Altman Z-Score + Rules"
+  },
+  "ml_model": {
+    "accuracy": 0.0,
+    "confidence": 0.9877699342998104,
+    "avg_prediction_time": 0.0010699748992919922,
+    "method": "LightGBM Ensemble + Feature Engineering"
+  },
+  "improvements": {
+    "accuracy_improvement": -0.2,
+    "confidence_improvement": 0.13776993429981044,
+    "speed_ratio": 0.0027184812157404516
+  }
+}

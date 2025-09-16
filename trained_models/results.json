@@ -1,0 +1,52 @@
+{
+  "training_results": {
+    "random_forest": {
+      "training_time": 1.225450038909912,
+      "val_accuracy": 0.9817095824640621,
+      "val_f1": 0.9816999511941273
+    },
+    "logistic_regression": {
+      "training_time": 1.6847050189971924,
+      "val_accuracy": 0.9787945471692721,
+      "val_f1": 0.9787619932789605
+    },
+    "neural_network": {
+      "training_time": 3.0110220909118652,
+      "val_accuracy": 0.9928267268726244,
+      "val_f1": 0.9928280510157353
+    },
+    "lightgbm": {
+      "training_time": 1.9720337390899658,
+      "val_accuracy": 0.9967134405990111,
+      "val_f1": 0.9967117410781241
+    }
+  },
+  "test_results": {
+    "random_forest": {
+      "test_accuracy": 0.9817321322419864,
+      "test_f1_weighted": 0.9817283062089684,
+      "prediction_time": 0.06752896308898926,
+      "samples_per_second": 647692.4566776233
+    },
+    "logistic_regression": {
+      "test_accuracy": 0.9783483469751704,
+      "test_f1_weighted": 0.9783144497228267,
+      "prediction_time": 0.002418041229248047,
+      "samples_per_second": 18088194.47367383
+    },
+    "neural_network": {
+      "test_accuracy": 0.9924322099775938,
+      "test_f1_weighted": 0.9924317723046443,
+      "prediction_time": 0.014200925827026367,
+      "samples_per_second": 3079940.035794033
+    },
+    "lightgbm": {
+      "test_accuracy": 0.9969591659426585,
+      "test_f1_weighted": 0.9969579741283068,
+      "prediction_time": 0.08833479881286621,
+      "samples_per_second": 495138.9552905105
+    }
+  },
+  "feature_count": 48,
+  "training_samples": 50000
+}

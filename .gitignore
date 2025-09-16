@@ -163,3 +163,5 @@ config/local_config.yaml
 notebooks/.ipynb_checkpoints/
 notebooks/*-checkpoint.ipynb
 *.md
+*.csv
+*.joblib
