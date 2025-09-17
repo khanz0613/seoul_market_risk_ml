@@ -1,0 +1,8 @@
+{
+  "total_samples": 408221,
+  "unique_regions": 423,
+  "unique_businesses": 63,
+  "training_time": 29.618863105773926,
+  "accuracy": 0.8781064364014943,
+  "cross_val_score": 0.8792685242811131
+}
