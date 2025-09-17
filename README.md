@@ -1,12 +1,12 @@
-# 🏪 Seoul Market Risk ML - AI Financial Risk Assessment System
+# 🏪 서울 상권 위험도 예측 ML - AI 금융 위험 평가 시스템
 
-**AI-Powered Financial Risk Assessment System for Seoul Commercial Businesses**
+**서울 상업 시설을 위한 AI 기반 금융 위험 평가 시스템**
 
 > 서울 상권 데이터 40만+ 건으로 훈련된 머신러닝 기반 사업체 재무 위험도 예측 시스템
 
 ---
 
-## 🚀 **Quick Start**
+## 🚀 **빠른 시작**
 
 ### **즉시 실행**
 ```bash
@@ -39,154 +39,154 @@ print(f"대출 추천: {result.loan_recommendation:,.0f}원")
 
 ---
 
-## 📊 **System Performance**
+## 📊 **시스템 성능**
 
-| Metric | Value | Status |
+| 지표 | 값 | 상태 |
 |--------|-------|---------|
-| **Accuracy** | 87.81% | ✅ Production Ready |
-| **ML Confidence** | 93-96% | ✅ Highly Reliable |
-| **Training Data** | 408,221 samples | ✅ Comprehensive |
-| **Prediction Speed** | 2.6-3.3ms | ✅ Real-time |
-| **Geographic Coverage** | 423 Seoul districts | ✅ Complete |
-| **Business Types** | 63 categories | ✅ Universal |
-| **Cost Structure Analysis** | 9 industries | ✅ Industry-specific |
+| **정확도** | 87.81% | ✅ 상용화 준비 완료 |
+| **ML 신뢰도** | 93-96% | ✅ 매우 신뢰할 만함 |
+| **훈련 데이터** | 408,221개 샘플 | ✅ 포괄적 |
+| **예측 속도** | 2.6-3.3ms | ✅ 실시간 |
+| **지리적 커버리지** | 서울 423개 지역 | ✅ 전체 |
+| **사업 유형** | 63개 카테고리 | ✅ 포괄적 |
+| **비용 구조 분석** | 9개 산업 | ✅ 산업별 특화 |
 
 ---
 
-## 🎯 **Core Features**
+## 🎯 **핵심 기능**
 
-### **1. 🤖 ML Risk Prediction**
-- **Algorithm**: RandomForest (200 trees, optimized)
-- **Training**: 408,221 Seoul commercial data
-- **Speed**: 2.6-3.3ms prediction time
-- **Accuracy**: 87.81% with 93-96% confidence
+### **1. 🤖 ML 위험도 예측**
+- **알고리즘**: RandomForest (200개 트리, 최적화됨)
+- **훈련**: 서울 상업 데이터 408,221건
+- **속도**: 2.6-3.3ms 예측 시간
+- **정확도**: 87.81% (93-96% 신뢰도)
 
-### **2. 📊 Altman Z-Score Analysis**
-- **Financial Stability**: Traditional ratio analysis
-- **Risk Grading**: 5-level risk assessment
-- **Debt Analysis**: Comprehensive leverage evaluation
+### **2. 📊 알트만 Z-스코어 분석**
+- **재무 안정성**: 전통적 비율 분석
+- **위험 등급**: 5단계 위험 평가
+- **부채 분석**: 포괄적 레버리지 평가
 
-### **3. 💰 7-Day Cash Flow Prediction**
-- **Daily Forecasting**: Revenue and cost projections
-- **Pattern Recognition**: Weekday/weekend variations
-- **Confidence Scoring**: Time-based reliability scoring
+### **3. 💰 7일 현금흐름 예측**
+- **일별 예측**: 수익 및 비용 예상
+- **패턴 인식**: 평일/주말 변화
+- **신뢰도 평가**: 시간 기반 신뢰도 스코어링
 
-### **4. 🏦 Immediate Cash Injection Recommendations**
-- **Smart Loan Logic**: Priority-based loan recommendations for risky businesses
-- **Binary Search**: Optimal loan amount calculation
-- **Safety Threshold**: Investment limit determination
-- **Real-time Simulation**: What-if scenario analysis
+### **4. 🏦 즉시 현금 투입 권장사항**
+- **스마트 대출 로직**: 위험 사업체 대상 우선순위 기반 대출 추천
+- **이진 탐색**: 최적 대출 금액 계산
+- **안전 임계값**: 투자 한도 결정
+- **실시간 시뮬레이션**: 가정 시나리오 분석
 
-### **5. 📊 Industry-Specific Cost Structure Analysis**
-- **9 Industry Categories**: Detailed cost breakdown comparison
-- **Real-time Benchmarking**: User costs vs industry averages
-- **Optimization Suggestions**: Specific improvement recommendations
-- **Performance Gaps**: Identify cost efficiency opportunities
+### **5. 📊 산업별 비용 구조 분석**
+- **9개 산업 카테고리**: 세부 비용 분해 비교
+- **실시간 벤치마킹**: 사용자 비용 대 산업 평균
+- **최적화 제안**: 구체적 개선 권장사항
+- **성능 격차**: 비용 효율성 기회 식별
 
 ---
 
-## 📚 **Documentation**
+## 📚 **문서**
 
-| Document | Purpose | Audience |
+| 문서 | 목적 | 대상 |
 |----------|---------|----------|
-| **[ML_TECHNICAL_REPORT.md](ML_TECHNICAL_REPORT.md)** | Complete technical specs | Researchers, academics, developers |
-| **[USER_GUIDE.md](USER_GUIDE.md)** | Easy-to-understand usage | Business owners, general users |
+| **[ML_TECHNICAL_REPORT.md](ML_TECHNICAL_REPORT.md)** | 완전한 기술 사양 | 연구자, 학자, 개발자 |
+| **[USER_GUIDE.md](USER_GUIDE.md)** | 이해하기 쉬운 사용법 | 사업주, 일반 사용자 |
 
-### **Archived Documentation**
-All previous documentation versions are preserved in `docs/archive/` for reference.
+### **아카이브된 문서**
+이전 문서 버전들은 모두 `docs/archive/`에서 참조용으로 보관됩니다.
 
 ---
 
-## 🚀 **Getting Started**
+## 🚀 **시작하기**
 
-### **1. System Requirements**
+### **1. 시스템 요구사항**
 ```bash
 Python 3.8+
-RAM: 8GB+ (16GB recommended for full training)
-Storage: 15GB free space (408K+ dataset)
-CPU: Multi-core recommended for training
+RAM: 8GB+ (전체 훈련을 위해 16GB 권장)
+저장소: 15GB 여유 공간 (408K+ 데이터셋)
+CPU: 훈련을 위한 멀티코어 권장
 ```
 
-### **2. Installation**
+### **2. 설치**
 ```bash
 git clone https://github.com/your-repo/seoul_market_risk_ml
 cd seoul_market_risk_ml
 pip install -r requirements.txt
 ```
 
-### **3. First Run**
+### **3. 첫 실행**
 ```bash
-# Train the model with full 408K+ dataset
+# 전체 408K+ 데이터셋으로 모델 훈련
 python FULL_SCALE_ML_SYSTEM.py
 
-# Start using the ULTIMATE advisor system
+# ULTIMATE 어드바이저 시스템 사용 시작
 python ULTIMATE_ML_ADVISOR.py
 ```
 
 ---
 
-## 💡 **Business Value**
+## 💡 **비즈니스 가치**
 
-### **For Business Owners** 🏪
-- **Risk Assessment**: "Is my business financially safe?"
-- **Loan Planning**: "How much can I safely borrow?"
-- **Investment Guidance**: "How much can I invest without risk?"
-- **Cash Flow Planning**: "What's my expected revenue next week?"
-- **Cost Optimization**: "How do my costs compare to industry average?"
+### **사업주를 위한** 🏪
+- **위험 평가**: "내 사업이 재정적으로 안전한가?"
+- **대출 계획**: "얼마나 안전하게 대출받을 수 있는가?"
+- **투자 가이던스**: "위험 없이 얼마나 투자할 수 있는가?"
+- **현금흐름 계획**: "다음 주 예상 수익은 얼마인가?"
+- **비용 최적화**: "내 비용이 업계 평균과 비교해 어떤가?"
 
-### **For Financial Institutions** 🏦
-- **Credit Scoring**: Objective risk assessment with 87.8% accuracy
-- **Loan Underwriting**: Data-driven decisions with ML confidence
-- **Portfolio Management**: Risk-adjusted pricing
-- **Regulatory Compliance**: Explainable AI models
-
----
-
-## 🏆 **Key Achievements**
-
-- ✅ **Production Ready**: 87.8% accuracy with real-world data
-- ✅ **Complete Coverage**: All Seoul districts and business types
-- ✅ **Real-time Performance**: Sub-3ms predictions
-- ✅ **Regulatory Compliant**: Explainable AI for financial sector
-- ✅ **Comprehensive Features**: Risk prediction + loan recommendations + cost analysis
-- ✅ **Industry Standard**: Meets financial sector requirements
+### **금융 기관을 위한** 🏦
+- **신용 평가**: 87.8% 정확도의 객관적 위험 평가
+- **대출 심사**: ML 신뢰도 기반 데이터 주도 결정
+- **포트폴리오 관리**: 위험 조정 가격 책정
+- **규제 준수**: 설명 가능한 AI 모델
 
 ---
 
-## 🔮 **Future Roadmap**
+## 🏆 **주요 성과**
 
-### **Q1 2025: Advanced ML**
-- Deep Learning integration (LSTM, Transformers)
-- Ensemble of multiple algorithms
-- AutoML hyperparameter optimization
-
-### **Q2 2025: Infrastructure**
-- Kubernetes orchestration
-- Apache Kafka streaming
-- Redis caching layer
-
-### **Q3 2025: Intelligence**
-- Natural language explanations
-- Causal inference modeling
-- Counterfactual analysis
+- ✅ **상용화 준비**: 실제 데이터로 87.8% 정확도
+- ✅ **완전한 커버리지**: 모든 서울 지역 및 사업 유형
+- ✅ **실시간 성능**: 3ms 미만 예측
+- ✅ **규제 준수**: 금융 부문 설명 가능한 AI
+- ✅ **포괄적 기능**: 위험 예측 + 대출 추천 + 비용 분석
+- ✅ **업계 표준**: 금융 부문 요구사항 충족
 
 ---
 
-## 📊 **Project Statistics**
+## 🔮 **향후 로드맵**
+
+### **2025년 1분기: 고급 ML**
+- 딥러닝 통합 (LSTM, Transformers)
+- 다중 알고리즘 앙상블
+- AutoML 하이퍼파라미터 최적화
+
+### **2025년 2분기: 인프라**
+- Kubernetes 오케스트레이션
+- Apache Kafka 스트리밍
+- Redis 캐싱 레이어
+
+### **2025년 3분기: 지능**
+- 자연어 설명
+- 인과 추론 모델링
+- 반사실적 분석
+
+---
+
+## 📊 **프로젝트 통계**
 
 ```
-📈 Lines of Code: 2,500+ (production)
-🧠 ML Training Data: 408,221 samples
-📊 Model Accuracy: 87.81%
-⚡ Prediction Speed: 2.6-3.3ms
-🌍 Geographic Coverage: 423 Seoul districts
-🏪 Business Types: 63 categories
-📚 Documentation: 50+ pages
-🎯 Features: Risk prediction, loan recommendations, cost analysis
+📈 코드 라인: 2,500+ (상용 버전)
+🧠 ML 훈련 데이터: 408,221개 샘플
+📊 모델 정확도: 87.81%
+⚡ 예측 속도: 2.6-3.3ms
+🌍 지리적 커버리지: 서울 423개 지역
+🏪 사업 유형: 63개 카테고리
+📚 문서: 50+ 페이지
+🎯 기능: 위험 예측, 대출 추천, 비용 분석
 ```
 
 ---
 
-**💡 Built with cutting-edge ML technology for real-world business impact**
+**💡 실제 비즈니스 임팩트를 위한 최첨단 ML 기술로 구축**
 
-*Last Updated: 2025-09-17 | Version: 2.1 ULTIMATE*
+*최종 업데이트: 2025-09-17 | 버전: 2.1 ULTIMATE*

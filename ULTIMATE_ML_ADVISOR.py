@@ -668,16 +668,18 @@ class UltimateMLAdvisor:
 
         analysis.append(f"📊 {industry} 비용구조 분석:")
 
-        # 각 비용 항목별 비교
+        # 모든 비용 항목별 비교 (그래프용 전체 데이터)
         for cost_type, user_pct in user_structure.items():
             avg_pct = industry_avg[cost_type]
             diff = user_pct - avg_pct
 
-            if abs(diff) > 5:  # 5% 이상 차이나는 경우만 언급
-                if diff > 0:
-                    analysis.append(f"   ⬆️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, +{diff:.1f}%p 높음)")
-                else:
-                    analysis.append(f"   ⬇️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, {diff:.1f}%p 낮음)")
+            # 모든 비용 항목 출력 (차이 크기 무관)
+            if diff > 0:
+                analysis.append(f"   ⬆️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, +{diff:.1f}%p 높음)")
+            elif diff < 0:
+                analysis.append(f"   ⬇️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, {diff:.1f}%p 낮음)")
+            else:
+                analysis.append(f"   ✅ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, 일치)")
 
         # 개선 제안
         highest_diff = max([(k, v - industry_avg[k]) for k, v in user_structure.items()], key=lambda x: x[1])
