@@ -111,47 +111,6 @@ class UltimateMLAdvisor:
             '치킨전문점': ['닭강정', '호프', '펍']
         }
 
-        # 업종별 비용구조 (2022년 소상공인실태조사 기준, %)
-        self.industry_cost_structure = {
-            '숙박및음식점업': {
-                '재료비': 42.6, '인건비': 20.5, '임차료': 9.0, '기타비용': 27.9
-            },
-            '도매및소매업': {
-                '재료비': 82.3, '인건비': 5.8, '임차료': 3.9, '기타비용': 8.0
-            },
-            '개인서비스업': {
-                '재료비': 23.3, '인건비': 29.7, '임차료': 13.9, '기타비용': 33.1
-            },
-            '예술스포츠여가업': {
-                '재료비': 15.6, '인건비': 28.6, '임차료': 19.3, '기타비용': 36.5
-            }
-        }
-
-        # 업종 매핑 (사용자 입력 → 표준 업종)
-        self.business_to_industry = {
-            # 숙박및음식점업
-            '커피전문점': '숙박및음식점업', '카페': '숙박및음식점업', '디저트카페': '숙박및음식점업',
-            '한식': '숙박및음식점업', '중식': '숙박및음식점업', '일식': '숙박및음식점업', '양식': '숙박및음식점업',
-            '치킨전문점': '숙박및음식점업', '피자': '숙박및음식점업', '패스트푸드': '숙박및음식점업',
-            '일반음식점': '숙박및음식점업', '분식': '숙박및음식점업', '베이커리': '숙박및음식점업',
-            '주점': '숙박및음식점업', '호프': '숙박및음식점업', '펭': '숙박및음식점업',
-
-            # 도매및소매업
-            '편의점': '도매및소매업', '슈퍼마켓': '도매및소매업', '의류': '도매및소매업',
-            '화장품': '도매및소매업', '잡화': '도매및소매업', '서점': '도매및소매업',
-            '문구점': '도매및소매업', '약국': '도매및소매업',
-
-            # 개인서비스업
-            '미용실': '개인서비스업', '네일샵': '개인서비스업', '세탁소': '개인서비스업',
-            '사진관': '개인서비스업', '수선집': '개인서비스업', '안마시술소': '개인서비스업',
-            '부동산': '개인서비스업', '여행사': '개인서비스업',
-
-            # 예술스포츠여가업
-            '노래방': '예술스포츠여가업', 'PC방': '예술스포츠여가업', '볼링장': '예술스포츠여가업',
-            '당구장': '예술스포츠여가업', '골프연습장': '예술스포츠여가업', '헬스장': '예술스포츠여가업',
-            '스크린골프': '예술스포츠여가업', '찜질방': '예술스포츠여가업'
-        }
-
         # 성능 메트릭
         self.performance_metrics = {
             'model_accuracy': 0.0,
@@ -589,12 +548,8 @@ class UltimateMLAdvisor:
         monthly_profit = zscore_analysis['financial_health']['monthly_profit']
         zscore = zscore_analysis['zscore']
 
-        # 즉각적 현금흐름 안정화 우선 (대출 추천)
-        if monthly_profit < 0 and loan_rec > 0:
-            recommendations.append(f"💳 즉시 현금 확보: {loan_rec:,.0f}원 대출로 현금흐름 안정화")
-            recommendations.append("🚨 장기 개선 과제: 비용 절감 또는 매출 증대 필요")
-            recommendations.append(f"💡 월비용 {abs(monthly_profit):,.0f}원 절감 시 흑자 전환 가능")
-        elif monthly_profit < 0:
+        # 현금흐름 기반 추천
+        if monthly_profit < 0:
             recommendations.append("🚨 월적자 개선 우선: 비용 절감 또는 매출 증대 필요")
             recommendations.append(f"💡 월비용 {abs(monthly_profit):,.0f}원 절감 시 흑자 전환 가능")
         elif monthly_profit > 0:
@@ -607,12 +562,12 @@ class UltimateMLAdvisor:
                 recommendations.append(f"📈 투자 한도: 최대 {investment_limit:,.0f}원 안전 투자 가능")
         elif zscore >= self.zscore_thresholds['good']:
             recommendations.append("✅ 양호한 재무 상태: 안정적 운영 지속")
-            if investment_limit > 0:
-                recommendations.append(f"📈 투자 한도: 최대 {investment_limit:,.0f}원 안전 투자 가능")
         elif zscore >= self.zscore_thresholds['fair']:
             recommendations.append("⚠️ 보통 수준: 재무 안정성 개선 필요")
         else:
             recommendations.append("🚨 재무 위험 상태: 즉시 개선 조치 필요")
+            if loan_rec > 0:
+                recommendations.append(f"💳 운영자금 확보: {loan_rec:,.0f}원 대출로 안정권 진입 가능")
 
         # 업종별 맞춤 추천
         business_advice = {
@@ -624,64 +579,7 @@ class UltimateMLAdvisor:
         if inputs.업종 in business_advice:
             recommendations.append(business_advice[inputs.업종])
 
-        # 업종별 비용구조 분석 추가
-        cost_analysis = self._analyze_cost_structure(inputs)
-        if cost_analysis:
-            recommendations.extend(cost_analysis)
-
         return recommendations
-
-    def _analyze_cost_structure(self, inputs: FinancialInputs) -> List[str]:
-        """업종별 비용구조 분석"""
-
-        # 업종 매핑 확인
-        industry = self.business_to_industry.get(inputs.업종)
-        if not industry or industry not in self.industry_cost_structure:
-            return []  # 매핑되지 않은 업종은 분석 생략
-
-        # 사용자의 실제 비용구조 계산
-        total_cost = inputs.인건비 + inputs.임대료 + inputs.식자재비 + inputs.기타비용
-        if total_cost <= 0:
-            return []
-
-        user_structure = {
-            '재료비': (inputs.식자재비 / total_cost) * 100,
-            '인건비': (inputs.인건비 / total_cost) * 100,
-            '임차료': (inputs.임대료 / total_cost) * 100,
-            '기타비용': (inputs.기타비용 / total_cost) * 100
-        }
-
-        # 업종 평균과 비교
-        industry_avg = self.industry_cost_structure[industry]
-        analysis = []
-
-        analysis.append(f"📊 {industry} 비용구조 분석:")
-
-        # 각 비용 항목별 비교
-        for cost_type, user_pct in user_structure.items():
-            avg_pct = industry_avg[cost_type]
-            diff = user_pct - avg_pct
-
-            if abs(diff) > 5:  # 5% 이상 차이나는 경우만 언급
-                if diff > 0:
-                    analysis.append(f"   ⬆️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, +{diff:.1f}%p 높음)")
-                else:
-                    analysis.append(f"   ⬇️ {cost_type}: {user_pct:.1f}% (업종평균 {avg_pct:.1f}%, {diff:.1f}%p 낮음)")
-
-        # 개선 제안
-        highest_diff = max([(k, v - industry_avg[k]) for k, v in user_structure.items()], key=lambda x: x[1])
-        if highest_diff[1] > 10:  # 10% 이상 높은 경우
-            cost_name = highest_diff[0]
-            if cost_name == '인건비':
-                analysis.append("💡 인건비 최적화: 업무 효율성 개선 또는 시간제 근무 검토")
-            elif cost_name == '임차료':
-                analysis.append("💡 임차료 최적화: 재계약 협상 또는 입지 재검토 필요")
-            elif cost_name == '재료비':
-                analysis.append("💡 재료비 최적화: 공급업체 재협상 또는 메뉴 구성 검토")
-            elif cost_name == '기타비용':
-                analysis.append("💡 기타비용 최적화: 불필요한 지출 항목 점검 필요")
-
-        return analysis
 
     def comprehensive_ultimate_analysis(self, 총자산: float, 월매출: float, 인건비: float,
                                       임대료: float, 식자재비: float, 기타비용: float,
