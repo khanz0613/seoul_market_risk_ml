@@ -492,9 +492,20 @@ class UltimateMLAdvisor:
         # 대출 추천 계산
         loan_recommendation = 0
         if current_zscore < self.zscore_thresholds['fair']:
-            # 위험한 경우: 안전권까지 필요한 대출 계산
-            target_zscore = self.zscore_thresholds['good']
+            # 위험한 경우: 단계적 목표 설정
+            if current_zscore < self.zscore_thresholds['poor']:
+                # 매우 위험한 경우: 먼저 'poor' 수준까지
+                target_zscore = self.zscore_thresholds['poor']
+            else:
+                # 보통 위험: 'fair' 수준까지
+                target_zscore = self.zscore_thresholds['fair']
+
             loan_recommendation = self._calculate_needed_loan(inputs, target_zscore)
+
+            # 대출로도 해결 안되면 현금흐름 개선 중심 대출 제안
+            if loan_recommendation == 0 and monthly_profit < 0:
+                # 3개월 운영자금 확보 개념으로 대출 제안
+                loan_recommendation = abs(monthly_profit) * 6  # 6개월 버틸 수 있는 금액
 
         # 투자 한도 계산
         investment_limit = 0
