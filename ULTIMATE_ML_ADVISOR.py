@@ -745,11 +745,11 @@ class UltimateMLAdvisor:
             print(f"\n📈 Advanced 7-Day Cash Flow Forecast:")
             cashflow_predictions = self.predict_advanced_cashflow(inputs)
 
-            for i, day in enumerate(cashflow_predictions[:3]):  # 처음 3일만 표시
+            for i, day in enumerate(cashflow_predictions):  # 전체 7일 표시
                 print(f"   {day['date']} ({day['weekday']}): {day['predicted_net']:+,.0f}원 (신뢰도: {day['confidence']:.0f}%)")
 
             total_7day = cashflow_predictions[-1]['cumulative_cash']
-            print(f"   ... 7일 누적 예상: {total_7day:+,.0f}원")
+            print(f"   7일 누적 예상: {total_7day:+,.0f}원")
 
             # 5. 최적화된 대출/투자 결정
             print(f"\n💰 Optimized Financial Decisions:")
