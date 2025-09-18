@@ -165,3 +165,4 @@ notebooks/*-checkpoint.ipynb
 *.md
 *.csv
 *.joblib
+*.json

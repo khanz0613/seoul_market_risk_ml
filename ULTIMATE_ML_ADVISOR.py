@@ -73,6 +73,41 @@ class PredictionResult:
     recommendations: List[str]
     system_health: Dict
 
+    def to_json_dict(self) -> Dict:
+        """API용 JSON 딕셔너리로 변환"""
+        # numpy 타입을 Python 기본 타입으로 변환하는 함수
+        def convert_numpy_types(obj):
+            if hasattr(obj, 'item'):
+                return obj.item()
+            elif isinstance(obj, dict):
+                return {k: convert_numpy_types(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy_types(item) for item in obj]
+            else:
+                return obj
+
+        return convert_numpy_types({
+            "timestamp": datetime.now().isoformat(),
+            "analysis_version": "ULTIMATE_1.0",
+            "risk_assessment": {
+                "ml_risk_level": int(self.ml_risk_level),
+                "ml_risk_name": str(self.ml_risk_name),
+                "ml_confidence": round(float(self.ml_confidence), 2),
+                "zscore": round(float(self.zscore), 2),
+                "zscore_grade": str(self.zscore_grade)
+            },
+            "financial_decisions": {
+                "loan_recommendation": float(self.loan_recommendation),
+                "investment_limit": float(self.investment_limit)
+            },
+            "cashflow_forecast": {
+                "daily_predictions": self.cashflow_7day,
+                "total_7day_projection": float(self.cashflow_7day[-1]['cumulative_cash']) if self.cashflow_7day else 0
+            },
+            "recommendations": self.recommendations,
+            "system_health": self.system_health
+        })
+
 class UltimateMLAdvisor:
     """모든 문제점이 해결된 최종 ML 금융 자문 시스템"""
 
@@ -849,11 +884,28 @@ def main():
         업종='커피전문점'
     )
 
+    # JSON 파일로 결과 저장
+    output_dir = Path("results")
+    output_dir.mkdir(exist_ok=True)
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    json_filename = f"financial_analysis_{timestamp}.json"
+    json_filepath = output_dir / json_filename
+
+    try:
+        json_data = result.to_json_dict()
+        with open(json_filepath, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, indent=2, ensure_ascii=False)
+        print(f"\n💾 Results saved to: {json_filepath}")
+    except Exception as e:
+        print(f"⚠️ JSON 저장 실패: {e}")
+
     print(f"\n🎉 PERFECT SYSTEM TEST COMPLETE!")
     print(f"🎯 Result: {result.ml_risk_name} | Z-Score: {result.zscore:.2f}")
     print(f"💰 Loan: {result.loan_recommendation:,.0f}원 | Investment: {result.investment_limit:,.0f}원")
     print(f"📊 7-day Cash: {result.cashflow_7day[-1]['cumulative_cash']:+,.0f}원")
     print(f"✨ System Status: {result.system_health.get('ml_model_status', 'OK')}")
+    print(f"📁 JSON File: {json_filename}")
 
 if __name__ == "__main__":
     main()
